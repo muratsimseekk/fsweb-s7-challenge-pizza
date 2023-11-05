@@ -2,7 +2,7 @@ import React from "react";
 
 const OrderForm = () => {
   return (
-    <div className="w-screen h-[100vh] bg-stone-100 flex flex-col items-center">
+    <div className="w-screen  bg-stone-100 flex flex-col items-center">
       <div className="w-[100%] h-[16vh] bg-red-600"></div>
       <div className="w-[40%] h-[16vh] bg-red-600 absolute ">
         <div className="relative h-[16vh]">
@@ -20,7 +20,7 @@ const OrderForm = () => {
           </nav>
         </div>
       </div>
-      <div className="flex flex-col w-[40%] h-[82vh] bg-blue-400 gap-2">
+      <div className="flex flex-col w-[40%]   gap-2">
         <div className=" w-[70%] p-4 pl-0 mt-2 ">
           <h3 className=" text-zinc-800 font-semibold font-barlow">
             Position Absulute Pizza
@@ -42,12 +42,12 @@ const OrderForm = () => {
             denir.
           </p>
         </div>
-        <div className=" flex flex-row  h-[30vh] mt-5">
+        <div className=" flex flex-row  mt-5">
           <div className="w-[50%]  flex flex-col">
             <h3 className="text-zinc-800 font-semibold font-barlow mb-3 leading-normal ">
               Boyut Sec <span className="text-rose-700">*</span>
             </h3>
-            <div className="flex flex-col gap-3 text-[13px] text-zinc-600 text-base font-medium font-barlow ">
+            <div className="flex flex-col gap-3 text-[13px] text-zinc-600 text-base font-medium font-barlow accent-blue-600">
               <label>
                 <input type="radio" name="myRadio" value="kucuk" />
                 Küçük
@@ -78,7 +78,7 @@ const OrderForm = () => {
             </label>
           </div>
         </div>
-        <div className="text-zinc-800 bg-purple-400 mt-5">
+        <div className="text-zinc-800  mt-5">
           <h3 className=" font-semibold font-barlow leading-normal">
             Ek Malzemeler
           </h3>
@@ -86,7 +86,7 @@ const OrderForm = () => {
             En Fazla 10 malzeme seçebilirsiniz. 5₺
           </p>
         </div>
-        <div className=" mt-2 flex flex-row flex-wrap gap-2 font-barlow text-zinc-600 text-base font-bold">
+        <div className=" mt-2 flex flex-row flex-wrap gap-2 font-barlow text-zinc-500 text-base accent-blue-600 ">
           <div className="w-[30%]">
             <label>
               <input type="checkbox" />
@@ -173,8 +173,21 @@ const OrderForm = () => {
           </div>
         </div>
 
-        <div className="bg-yellow-300  h-[10vh]"></div>
-        <div className="bg-blue-400  h-[10vh]"></div>
+        <div className=" mt-10 flex flex-col gap-3 ">
+          <h3 className="text-zinc-800 font-semibold font-barlow">
+            Sipariş Notu
+          </h3>
+          <input
+            className="w-2/3 h-10 border-zinc-400 border-2 "
+            type="text"
+            placeholder="Siparişine eklemek istediğin bir not var mı?"
+          />
+        </div>
+        <hr className="mt-5 mb-5" />
+        <div className=" flex flex-row justify-between">
+          <div className="w-[30%] bg-slate-600 h-[15vh]"></div>
+          <div className="w-[60%] bg-blue-500 h-[15vh]"></div>
+        </div>
       </div>
     </div>
   );
