@@ -196,17 +196,21 @@ const OrderForm = () => {
         <hr className="mt-5 mb-5" />
         <div className=" flex flex-row justify-between mb-40">
           <div className="w-[30%] pt-6 flex ">
-            <button className="p-2 w-[33%] bg-yellow-400 h-[30%]">-</button>
+            <button className="p-2 w-[33%] bg-yellow-400 h-[30%] rounded-md">
+              -
+            </button>
             <input
               type="text"
               value={1}
-              className="w-[33%] h-[30%] text-center"
+              className="w-[33%] h-[30%] text-center rounded-sm"
             />
-            <button className="w-[33%] bg-yellow-400 h-[30%]">+</button>
+            <button className="w-[33%] bg-yellow-400 h-[30%]  rounded-md">
+              +
+            </button>
           </div>
           <div className="w-[60%] flex flex-col">
             <div className="w-[100%] flex flex-col pt-6 pb-6">
-              <h3 className="text-zinc-800 font-semibold font-barlow ml-6">
+              <h3 className="text-zinc-800 font-semibold font-barlow ml-7">
                 Sipariş Toplamı
               </h3>
               <div className="flex justify-evenly mt-5">
