@@ -195,7 +195,15 @@ const OrderForm = () => {
         </div>
         <hr className="mt-5 mb-5" />
         <div className=" flex flex-row justify-between mb-40">
-          <div className="w-[30%] bg-slate-600 h-[15vh]"></div>
+          <div className="w-[30%] pt-6 flex ">
+            <button className="p-2 w-[33%] bg-yellow-400 h-[30%]">-</button>
+            <input
+              type="text"
+              value={1}
+              className="w-[33%] h-[30%] text-center"
+            />
+            <button className="w-[33%] bg-yellow-400 h-[30%]">+</button>
+          </div>
           <div className="w-[60%] flex flex-col">
             <div className="w-[100%] flex flex-col pt-6 pb-6">
               <h3 className="text-zinc-800 font-semibold font-barlow ml-6">
