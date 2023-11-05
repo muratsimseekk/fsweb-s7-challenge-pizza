@@ -8,16 +8,15 @@ export default function HomePage() {
       </h1>
       <div className="w-screen  h-[100vh] flex flex-col justify-between items-center bg-red-600">
         <div className="= w-3/5 mt-32 h-80 justify-center items-center flex flex-col gap-5 ">
-          <div className="text-center text-[55px] uppercase font-bebas-600 leading-[75px]  ">
+          <div className="text-center text-[60px] uppercase font-bebas font-thin leading-[75px]  ">
             KOD ACIKTIRIR
             <br />
             Pizza, DOYURUR
           </div>
-          <div className=" w-2/5 bg-yellow-400 rounded-[50px] flex justify-center">
-            <div className="w-[93.47px] h-[52px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[56px]">
-              ACIKTIM
-            </div>
-          </div>
+
+          <a className=" bg-yellow-400 pl-11 pr-11 rounded-[40px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[45px] hover:cursor-pointer hover:text-zinc-600 ">
+            ACIKTIM
+          </a>
         </div>
         <img className="w-[70%] " src="src/Components/banner.png" />
       </div>
