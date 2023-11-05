@@ -3,12 +3,12 @@ import React from "react";
 export default function HomePage() {
   return (
     <>
-      <h1 className="absolute left-[600px] top-[80px] text-[30px] font-['Londrina']">
+      <h1 className="absolute left-[600px] top-[70px] text-[34px] font-londrina">
         Teknolojik Yemekler
       </h1>
       <div className="w-screen  h-[100vh] flex flex-col justify-between items-center bg-red-600">
         <div className="= w-3/5 mt-32 h-80 justify-center items-center flex flex-col gap-5 ">
-          <div className="text-center text-[35px] uppercase ">
+          <div className="text-center text-[55px] uppercase font-bebas-600 leading-[75px]  ">
             KOD ACIKTIRIR
             <br />
             Pizza, DOYURUR
