@@ -1,9 +1,10 @@
 import "./App.css";
+import HomePage from "./Components/HomePage";
 
 function App() {
   return (
     <>
-      <h1 className="text-center">Teknolojik Yemekler</h1>
+      <HomePage />
     </>
   );
 }
