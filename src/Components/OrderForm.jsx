@@ -22,9 +22,9 @@ const OrderForm = () => {
       </div>
       <div className="flex flex-col w-[40%] h-[82vh] bg-blue-400 gap-2">
         <div className=" w-[70%] p-4 pl-0 mt-2 ">
-          <h1 className="text-[15px]  text-zinc-800 font-semibold font-barlow">
+          <h3 className=" text-zinc-800 font-semibold font-barlow">
             Position Absulute Pizza
-          </h1>
+          </h3>
         </div>
         <div>
           <h1 className="text-zinc-800 font-bold text-[22px] font-barlow leading-10">
@@ -32,7 +32,7 @@ const OrderForm = () => {
           </h1>
         </div>
         <div>
-          <p className="text-zinc-500 text-base text-[13px] font-barlow leading-7">
+          <p className="text-zinc-500 text-base text-[13px] font-barlow leading-5">
             Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı
             pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
             diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
@@ -78,8 +78,101 @@ const OrderForm = () => {
             </label>
           </div>
         </div>
-        <div className="bg-green-500  h-[10vh]"></div>
-        <div className="bg-purple-400  h-[10vh]"></div>
+        <div className="text-zinc-800 bg-purple-400 mt-5">
+          <h3 className=" font-semibold font-barlow leading-normal">
+            Ek Malzemeler
+          </h3>
+          <p className="text-zinc-500 text-base text-[13px] font-barlow leading-7">
+            En Fazla 10 malzeme seçebilirsiniz. 5₺
+          </p>
+        </div>
+        <div className=" mt-2 flex flex-row flex-wrap gap-2 font-barlow text-zinc-600 text-base font-bold">
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Pepperoni
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Sosis
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Kanada Jambonu
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Tavuk Izgara
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Soğan
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Domates
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Mısır
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Sucuk
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Jalepeno
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Sarımsak
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Biber
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Sucuk
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Ananas
+            </label>
+          </div>
+          <div className="w-[30%]">
+            <label>
+              <input type="checkbox" />
+              Kabak
+            </label>
+          </div>
+        </div>
+
         <div className="bg-yellow-300  h-[10vh]"></div>
         <div className="bg-blue-400  h-[10vh]"></div>
       </div>
