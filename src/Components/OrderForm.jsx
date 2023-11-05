@@ -42,7 +42,32 @@ const OrderForm = () => {
             denir.
           </p>
         </div>
-        <div className="bg-black  h-[10vh]"></div>
+        <div className=" flex flex-row  h-[30vh] ">
+          <div className="w-[50%] bg-green-400 flex flex-col">
+            <h3 className="text-zinc-800 font-semibold font-barlow mb-3 leading-normal ">
+              Boyut Sec <span className="text-rose-700">*</span>
+            </h3>
+            <div className="flex flex-col gap-3 text-zinc-600 text-base font-medium font-barlow ">
+              <label>
+                <input type="radio" name="myRadio" value="kucuk" />
+                Küçük
+              </label>
+              <label>
+                <input type="radio" name="myRadio" value="kucuk" />
+                Orta
+              </label>
+              <label>
+                <input type="radio" name="myRadio" value="kucuk" />
+                Büyük
+              </label>
+            </div>
+          </div>
+          <div className="w-[50%] bg-yellow-200">
+            <h3 className="text-zinc-800 font-semibold font-barlow leading-normal">
+              Hamur Sec <span className="text-red-600">*</span>
+            </h3>
+          </div>
+        </div>
         <div className="bg-green-500  h-[10vh]"></div>
         <div className="bg-purple-400  h-[10vh]"></div>
         <div className="bg-yellow-300  h-[10vh]"></div>
