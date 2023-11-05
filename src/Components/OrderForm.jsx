@@ -172,8 +172,18 @@ const OrderForm = () => {
             </label>
           </div>
         </div>
-
-        <div className=" mt-10 flex flex-col gap-3 ">
+        <div className="mt-5 flex flex-col gap-3">
+          <h3 className="text-zinc-800 font-semibold font-barlow">
+            İsim Soyisim :
+          </h3>
+          <input
+            id="name-input"
+            type="text"
+            className="w-2/3 h-10 border-zinc-400 border-2 "
+            placeholder="Siparişi teslim alacak kişi.."
+          />
+        </div>
+        <div className=" mt-5 flex flex-col gap-3 ">
           <h3 className="text-zinc-800 font-semibold font-barlow">
             Sipariş Notu
           </h3>
@@ -186,7 +196,20 @@ const OrderForm = () => {
         <hr className="mt-5 mb-5" />
         <div className=" flex flex-row justify-between">
           <div className="w-[30%] bg-slate-600 h-[15vh]"></div>
-          <div className="w-[60%] bg-blue-500 h-[15vh]"></div>
+
+          <div className="w-[60%] bg-blue-500 flex flex-col pt-6 pb-6">
+            <h3 className="text-zinc-800 font-semibold font-barlow ml-6">
+              Sipariş Toplamı
+            </h3>
+            <div className="flex justify-evenly mt-5">
+              <h4 className="w-[50%]"> Seçimler </h4>
+              <p className="w-[25%]">25.00₺</p>
+            </div>
+            <div className="flex justify-evenly mt-3">
+              <h4 className="w-[50%]"> Toplam </h4>
+              <p className="w-[25%]">110.50₺</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
