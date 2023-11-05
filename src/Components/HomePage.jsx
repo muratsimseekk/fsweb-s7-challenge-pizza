@@ -14,9 +14,9 @@ export default function HomePage() {
             Pizza, DOYURUR
           </div>
 
-          <a className=" bg-yellow-400 pl-11 pr-11 rounded-[40px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[45px] hover:cursor-pointer hover:text-zinc-600 ">
+          <button className=" bg-yellow-400 pl-11 pr-11 rounded-[40px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[45px] hover:cursor-pointer hover:text-zinc-600 ">
             ACIKTIM
-          </a>
+          </button>
         </div>
         <img className="w-[70%] " src="src/Components/banner.png" />
       </div>

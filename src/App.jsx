@@ -1,10 +1,14 @@
 import "./App.css";
 import HomePage from "./Components/HomePage";
-
+import { Route, Link } from "react-router-dom";
+import OrderForm from "./Components/OrderForm";
+import OrderReceived from "./Components/OrderReceived";
 function App() {
   return (
     <>
-      <HomePage />
+      <Route exact path="/" component={HomePage} />
+      <Route path="/pizza" component={OrderForm} />
+      <Route path="/summary" component={OrderReceived} />
     </>
   );
 }
