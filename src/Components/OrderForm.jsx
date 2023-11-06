@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const OrderForm = () => {
+  const [productInPrice, setProductInPrice] = useState(85.5);
+
   return (
     <div className="w-screen  bg-stone-100 flex flex-col items-center">
       <div className="w-[100%] h-[16vh] bg-red-600"></div>
@@ -26,10 +28,14 @@ const OrderForm = () => {
             Position Absulute Pizza
           </h3>
         </div>
-        <div>
-          <h1 className="text-zinc-800 font-bold text-[22px] font-barlow leading-10">
-            85.50₺{" "}
+        <div className="flex justify-between">
+          <h1 className="text-zinc-800 font-bold text-[22px] w-[25%] font-barlow leading-10">
+            {productInPrice}₺
           </h1>
+          <div className="flex font-barlow text-zinc-500 w-[40%] items-center justify-between">
+            <p>4.9</p>
+            <p>(200)</p>
+          </div>
         </div>
         <div>
           <p className="text-zinc-500 text-base text-[13px] font-barlow leading-5">
