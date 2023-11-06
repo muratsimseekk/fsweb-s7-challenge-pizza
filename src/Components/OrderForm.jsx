@@ -7,15 +7,55 @@ import Info from "./Info";
 const OrderForm = () => {
   const [productInPrice, setProductInPrice] = useState(85.5);
   const [size, setSize] = useState("sm");
+  const [tickness, setTickness] = useState("Normal");
   const [totalPrice, setTotalPrice] = useState(productInPrice);
-
+  const [tickPrice, setTickPrice] = useState(0);
   const handleRadioChange = (event) => {
     setSize(event.target.value);
   };
+  const optionSelection = (e) => {
+    setTickness(e.target.value);
+  };
 
   useEffect(() => {
-    console.log("useeffect icerisindeki size degeri  :  ", size);
+    // console.log("useeffect icerisindeki size degeri  :  ", size);
+    let price = productInPrice;
+    if (size === "sm") {
+      price = price;
+      //   console.log("small size icin toplam ucret", totalPrice);
+    } else if (size === "md") {
+      price += 15;
+      //   console.log("medium size icin toplam ucret", totalPrice);
+    } else if (size === "lg") {
+      price += 25;
+      //   console.log("large size icin toplam ucret", totalPrice);
+    }
+
+    // console.log("useEffect icerisinden degisen ucret", price);
+
+    setTotalPrice(price);
   }, [size]);
+
+  console.log("globalde totalprice", totalPrice);
+
+  useEffect(() => {
+    // console.log("hamur icin baslangic fiyati", tickPrice);
+    let price = 0;
+
+    if (tickness === "thin") {
+      price += 10;
+      //   console.log("ince hamur icin toplam ucret", tickPrice);
+    } else if (tickness === "normal") {
+      price = 0;
+      //   console.log("normal hamur icin toplam ucret", tickPrice);
+    } else if (tickness === "cheese") {
+      price += 20;
+      //   console.log("peynirli hamur icin toplam ucret", tickPrice);
+    } else {
+      price = 0;
+    }
+    setTickPrice(price);
+  }, [tickness]);
 
   return (
     <div className="w-screen  bg-stone-100 flex flex-col items-center">
@@ -62,11 +102,16 @@ const OrderForm = () => {
             denir.
           </p>
         </div>
-        <Sizing size={size} handleRadioChange={handleRadioChange} />
+        <Sizing
+          size={size}
+          handleRadioChange={handleRadioChange}
+          tickness={tickness}
+          optionSelection={optionSelection}
+        />
         <Additional />
         <Info />
         <hr className="mt-5 mb-5" />
-        <GiveAnOrder />
+        <GiveAnOrder totalPrice={totalPrice} tickPrice={tickPrice} />
       </div>
     </div>
   );

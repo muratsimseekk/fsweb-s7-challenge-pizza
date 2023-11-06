@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-function Sizing({ size, handleRadioChange }) {
+function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
   return (
     <div className=" flex flex-row  mt-5">
       <div className="w-[50%]  flex flex-col">
@@ -47,11 +47,13 @@ function Sizing({ size, handleRadioChange }) {
         <label>
           <select
             className="bg-zinc-200 text-[13px] text-zinc-800"
-            name="selectionTickness"
+            value={tickness}
+            onChange={optionSelection}
           >
-            <option value="hamur">Hamur Kalınlığı</option>
-            <option value="ince">İnce</option>
-            <option value="kalin">Kalın</option>
+            <option value="choose">Hamur Kalınlığı</option>
+            <option value="normal">Normal</option>
+            <option value="thin">İnce</option>
+            <option value="cheese">Peynirli</option>
           </select>
         </label>
       </div>
