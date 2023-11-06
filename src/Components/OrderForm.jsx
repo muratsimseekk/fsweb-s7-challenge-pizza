@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Sizing from "./Sizing";
+import Additional from "./Additional";
+import GiveAnOrder from "./GiveAnOrder";
+import Info from "./Info";
 
 const OrderForm = () => {
   const [productInPrice, setProductInPrice] = useState(85.5);
+  const [size, setSize] = useState("sm");
+  const [totalPrice, setTotalPrice] = useState(productInPrice);
+
+  const handleRadioChange = (event) => {
+    setSize(event.target.value);
+  };
+
+  useEffect(() => {
+    console.log("useeffect icerisindeki size degeri  :  ", size);
+  }, [size]);
 
   return (
     <div className="w-screen  bg-stone-100 flex flex-col items-center">
@@ -48,191 +62,11 @@ const OrderForm = () => {
             denir.
           </p>
         </div>
-        <div className=" flex flex-row  mt-5">
-          <div className="w-[50%]  flex flex-col">
-            <h3 className="text-zinc-800 font-semibold font-barlow mb-3 leading-normal ">
-              Boyut Sec <span className="text-rose-700">*</span>
-            </h3>
-            <div className="flex flex-col gap-3 text-[13px] text-zinc-600 text-base font-medium font-barlow accent-blue-600">
-              <label>
-                <input type="radio" name="myRadio" value="kucuk" />
-                Küçük
-              </label>
-              <label>
-                <input type="radio" name="myRadio" value="kucuk" />
-                Orta
-              </label>
-              <label>
-                <input type="radio" name="myRadio" value="kucuk" />
-                Büyük
-              </label>
-            </div>
-          </div>
-          <div className="w-[50%] ">
-            <h3 className="text-zinc-800 font-semibold font-barlow leading-normal mb-3">
-              Hamur Seç <span className="text-red-600">*</span>
-            </h3>
-            <label>
-              <select
-                className="bg-zinc-200 text-[13px] text-zinc-800"
-                name="selectionTickness"
-              >
-                <option value="hamur">Hamur Kalınlığı</option>
-                <option value="ince">İnce</option>
-                <option value="kalin">Kalın</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div className="text-zinc-800  mt-5">
-          <h3 className=" font-semibold font-barlow leading-normal">
-            Ek Malzemeler
-          </h3>
-          <p className="text-zinc-500 text-base text-[13px] font-barlow leading-7">
-            En Fazla 10 malzeme seçebilirsiniz. 5₺
-          </p>
-        </div>
-        <div className=" mt-2 flex flex-row flex-wrap gap-2 font-barlow text-zinc-500 text-base accent-blue-600 ">
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Pepperoni
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Sosis
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Kanada Jambonu
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Tavuk Izgara
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Soğan
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Domates
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Mısır
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Sucuk
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Jalepeno
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Sarımsak
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Biber
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Sucuk
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Ananas
-            </label>
-          </div>
-          <div className="w-[30%]">
-            <label>
-              <input type="checkbox" />
-              Kabak
-            </label>
-          </div>
-        </div>
-        <div className="mt-5 flex flex-col gap-3">
-          <h3 className="text-zinc-800 font-semibold font-barlow">
-            İsim Soyisim :
-          </h3>
-          <input
-            id="name-input"
-            type="text"
-            className="w-2/3 h-10 border-zinc-400 border-2 rounded-md"
-            placeholder="Siparişi teslim alacak kişi.."
-          />
-        </div>
-        <div className=" mt-5 flex flex-col gap-3 ">
-          <h3 className="text-zinc-800 font-semibold font-barlow">
-            Sipariş Notu
-          </h3>
-          <input
-            className="w-2/3 h-10 border-zinc-400 border-2 rounded-md "
-            type="text"
-            placeholder="Siparişine eklemek istediğin bir not var mı?"
-          />
-        </div>
+        <Sizing size={size} handleRadioChange={handleRadioChange} />
+        <Additional />
+        <Info />
         <hr className="mt-5 mb-5" />
-        <div className=" flex flex-row justify-between mb-40">
-          <div className="w-[30%] pt-6 flex ">
-            <button className="p-2 w-[33%] bg-yellow-400 h-[30%] rounded-md">
-              -
-            </button>
-            <input
-              type="text"
-              value={1}
-              className="w-[33%] h-[30%] text-center rounded-sm"
-            />
-            <button className="w-[33%] bg-yellow-400 h-[30%]  rounded-md">
-              +
-            </button>
-          </div>
-          <div className="w-[60%] flex flex-col">
-            <div className="w-[100%] flex flex-col pt-6 pb-6">
-              <h3 className="text-zinc-800 font-semibold font-barlow ml-7">
-                Sipariş Toplamı
-              </h3>
-              <div className="flex justify-evenly mt-5">
-                <h4 className="w-[50%]"> Seçimler </h4>
-                <p className="w-[25%]">25.00₺</p>
-              </div>
-              <div className="flex justify-evenly mt-3">
-                <h4 className="w-[50%]"> Toplam </h4>
-                <p className="w-[25%]">110.50₺</p>
-              </div>
-            </div>
-            <button className="p-3 bg-yellow-400 text-zinc-800 rounded-md">
-              SİPARİŞ VER{" "}
-            </button>
-          </div>
-        </div>
+        <GiveAnOrder />
       </div>
     </div>
   );
