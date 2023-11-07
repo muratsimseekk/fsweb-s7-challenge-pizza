@@ -12,7 +12,17 @@ const OrderForm = () => {
   const [tickPrice, setTickPrice] = useState(0);
   const [itemsArr, setItemsArr] = useState([]);
   const [additionalPrice, setAdditionalPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  const countUp = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const countDown = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
 
   const handleRadioChange = (event) => {
     setSize(event.target.value);
@@ -39,6 +49,11 @@ const OrderForm = () => {
       setItemsArr(updatedItem);
     }
   };
+
+  useEffect(() => {
+    console.log(quantity);
+  }, [quantity]);
+
   useEffect(() => {
     console.log("item arrayi ", itemsArr);
 
@@ -151,6 +166,9 @@ const OrderForm = () => {
           totalPrice={totalPrice}
           tickPrice={tickPrice}
           additionalPrice={additionalPrice}
+          countUp={countUp}
+          countDown={countDown}
+          quantity={quantity}
         />
       </div>
     </div>

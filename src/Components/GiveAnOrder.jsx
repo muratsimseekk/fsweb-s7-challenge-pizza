@@ -1,17 +1,33 @@
 import React from "react";
 
-function GiveAnOrder({ totalPrice, tickPrice, additionalPrice }) {
+function GiveAnOrder({
+  totalPrice,
+  tickPrice,
+  additionalPrice,
+  countUp,
+  countDown,
+  quantity,
+}) {
   return (
     <div className=" flex flex-row justify-between mb-40">
       <div className="w-[30%] pt-6 flex ">
-        <button className="p-2 w-[33%] bg-yellow-400 h-[30%] rounded-md">
+        <button
+          onClick={countDown}
+          className="p-2 w-[33%] bg-yellow-400 h-[30%] rounded-md"
+        >
           -
         </button>
         <input
+          value={quantity}
           type="number"
           className="w-[33%] h-[30%] text-center rounded-sm"
         />
-        <button className="w-[33%] bg-yellow-400 h-[30%]  rounded-md">+</button>
+        <button
+          onClick={countUp}
+          className="w-[33%] bg-yellow-400 h-[30%]  rounded-md"
+        >
+          +
+        </button>
       </div>
       <div className="w-[60%] flex flex-col">
         <div className="w-[100%] flex flex-col pt-6 pb-6">
@@ -20,12 +36,12 @@ function GiveAnOrder({ totalPrice, tickPrice, additionalPrice }) {
           </h3>
           <div className="flex justify-evenly mt-5">
             <h4 className="w-[50%]"> Seçimler </h4>
-            <p className="w-[25%]">25.00₺</p>
+            <p className="w-[25%]">{additionalPrice}₺</p>
           </div>
           <div className="flex justify-evenly mt-3">
             <h4 className="w-[50%]"> Toplam </h4>
             <p className="w-[25%]">
-              {totalPrice + tickPrice + additionalPrice}₺
+              {(totalPrice + tickPrice + additionalPrice) * quantity}₺
             </p>
           </div>
         </div>
