@@ -12,6 +12,7 @@ function GiveAnOrder({
     <div className=" flex flex-row justify-between mb-40">
       <div className="w-[30%] pt-6 flex ">
         <button
+          type="button"
           onClick={countDown}
           className="p-2 w-[33%] bg-yellow-400 h-[30%] rounded-md"
         >
@@ -22,6 +23,7 @@ function GiveAnOrder({
         </p>
 
         <button
+          type="button"
           onClick={countUp}
           className="w-[33%] bg-yellow-400 h-[30%]  rounded-md"
         >
