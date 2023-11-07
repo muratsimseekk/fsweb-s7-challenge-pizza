@@ -50,7 +50,9 @@ function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
             value={tickness}
             onChange={optionSelection}
           >
-            <option value="choose">Hamur Kalınlığı</option>
+            <option value="" disabled>
+              Hamur Kalınlığı
+            </option>
             <option value="normal">Normal</option>
             <option value="thin">İnce</option>
             <option value="cheese">Peynirli</option>

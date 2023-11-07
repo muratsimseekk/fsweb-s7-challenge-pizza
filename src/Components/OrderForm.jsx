@@ -17,12 +17,22 @@ const OrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [textName, setTextName] = useState("");
   const [orderNote, setOrderNote] = useState("");
-
   const [sentData, setSentData] = useState([]);
+
+  const [formValid, setFormValid] = useState(true);
   const [formData, setFormData] = useState({
     pizzaSize: "",
     pizzaDough: "",
-    addItems: "",
+    addItems: [],
+    fullName: "",
+    orderQuantity: "",
+    totalBasket: "",
+  });
+
+  const [formError, setFormError] = useState({
+    pizzaSize: "",
+    pizzaDough: "",
+    addItems: [],
     fullName: "",
     orderQuantity: "",
     totalBasket: "",
@@ -31,25 +41,36 @@ const OrderForm = () => {
   let formDataSchema = Yup.object().shape({
     fullName: Yup.string()
       .required("İsim alanı boş bırakılamaz.")
-      .min(2, "2 karakterden daha az olamaz."),
+      .min(2, "Isim 2 karakterden daha az olamaz."),
     pizzaSize: Yup.string().required("Pizza boyutu seçin ."),
-    addItems: Yup.string().required("En az 4 adet malzeme seçin ."),
-    pizzaDough: Yup.string().required("Geçerli bir pizza hamuru seçin"),
+    addItems: Yup.array()
+      .required("En az 4 adet malzeme seçin .")
+      .min(4, "En az 4 adet malzeme seçin."),
+    pizzaDough: Yup.string().required("Geçerli bir pizza hamuru seçin ."),
+
+    orderQuantity: Yup.string().required("Lütfen en az 1 ürün seçimi yapın."),
+    totalBasket: Yup.string().required("Lütfen ödeme için ürün girin."),
   });
 
-  // let formDataSchema = Yup.object().shape({
-  //   fullName: Yup.string()
-  //     .required("This section can not be empty.")
-  //     .min(3, "Can not be less than 3 characters."),
-  //   password: Yup.string()
-  //     .required("Password is necessary.")
-  //     .min(8, "Minumum 8 character."),
-  //   mail: Yup.string()
-  //     .required("This section can not be empty.")
-  //     .email("Please enter valid mail address."),
-  //   active: Yup.boolean().oneOf([true], "Terms of Services must be accepted."),
-  // });
+  useEffect(() => {
+    formDataSchema.isValid(formData).then((valid) => setFormValid(valid));
+  }, [formData]);
 
+  const checkValidationFor = (field, value) => {
+    Yup.reach(formDataSchema, field)
+      .validate(value)
+      .then((valid) => {
+        setFormError({ ...formError, [field]: "" });
+      })
+      .catch((err) => {
+        console.log("HATA! ", field, err.errors[0]);
+
+        setFormError((prevFormErrors) => ({
+          ...prevFormErrors,
+          [field]: err.errors[0],
+        }));
+      });
+  };
   // console.log("siparis ozetim ", formData);
   const textValue = (even) => {
     setTextName(even.target.value);
@@ -99,19 +120,28 @@ const OrderForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    for (let key in formData) {
+      //   console.log(
+      //     "checkValidationFor(key, formData[key]) > ",
+      //     key,
+      //     formData[key]
+      //   );
+      checkValidationFor(key, formData[key]);
+    }
+    if (formValid) {
+      axios
+        .post("https://reqres.in/api/users", formData)
+        .then((response) => {
+          setSentData(response.data);
+          // İşlem başarılı olduğunda yapılacak işlemler
+          console.log("Veri başarıyla gönderildi. ");
+        })
 
-    axios
-      .post("https://reqres.in/api/users", formData)
-      .then((response) => {
-        setSentData(response.data);
-        // İşlem başarılı olduğunda yapılacak işlemler
-        console.log("Veri başarıyla gönderildi. ");
-      })
-
-      .catch((error) => {
-        // İşlem sırasında bir hata olursa yapılacak işlemler
-        console.error("Veri gönderilirken hata oluştu:", error);
-      });
+        .catch((error) => {
+          // İşlem sırasında bir hata olursa yapılacak işlemler
+          console.error("Veri gönderilirken hata oluştu:", error);
+        });
+    }
   };
 
   useEffect(() => {
