@@ -1,6 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function HomePage() {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("./pizza");
+  };
   return (
     <>
       <h1 className="absolute left-[600px] top-[70px] text-[34px] font-londrina text-white">
@@ -14,7 +20,10 @@ export default function HomePage() {
             Pizza, DOYURUR
           </div>
 
-          <button className=" bg-yellow-400 pl-11 pr-11 rounded-[40px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[45px] hover:cursor-pointer hover:text-zinc-700 ">
+          <button
+            onClick={handleClick}
+            className=" bg-yellow-400 pl-11 pr-11 rounded-[40px] text-center text-zinc-800 text-lg font-semibold font-['Barlow'] leading-[45px] hover:cursor-pointer hover:text-zinc-700 "
+          >
             ACIKTIM
           </button>
         </div>

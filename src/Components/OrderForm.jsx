@@ -5,8 +5,11 @@ import Sizing from "./Sizing";
 import Additional from "./Additional";
 import GiveAnOrder from "./GiveAnOrder";
 import Info from "./Info";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const OrderForm = () => {
+  const history = useHistory();
+
   const [productInPrice, setProductInPrice] = useState(85.5);
   const [size, setSize] = useState("sm");
   const [tickness, setTickness] = useState("Normal");
@@ -37,6 +40,10 @@ const OrderForm = () => {
     orderQuantity: "",
     totalBasket: "",
   });
+
+  const mainPage = () => {
+    history.push("./");
+  };
 
   let formDataSchema = Yup.object().shape({
     fullName: Yup.string()
@@ -230,7 +237,10 @@ const OrderForm = () => {
               Teknolojik Yemekler
             </h1>
             <nav className="absolute bottom-3 flex font-barlow">
-              <a className="text-[14px] text-gray-400 hover:text-white hover:cursor-pointer ">
+              <a
+                onClick={mainPage}
+                className="text-[14px] text-gray-400 hover:text-white hover:cursor-pointer "
+              >
                 Anasayfa
               </a>
               <p className="text-gray-400">-</p>
