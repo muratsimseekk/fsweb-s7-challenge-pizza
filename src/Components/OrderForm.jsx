@@ -28,7 +28,29 @@ const OrderForm = () => {
     totalBasket: "",
   });
 
-  console.log("siparis ozetim ", formData);
+  let formDataSchema = Yup.object().shape({
+    fullName: Yup.string()
+      .required("İsim alanı boş bırakılamaz.")
+      .min(2, "2 karakterden daha az olamaz."),
+    pizzaSize: Yup.string().required("Pizza boyutu seçin ."),
+    addItems: Yup.string().required("En az 4 adet malzeme seçin ."),
+    pizzaDough: Yup.string().required("Geçerli bir pizza hamuru seçin"),
+  });
+
+  // let formDataSchema = Yup.object().shape({
+  //   fullName: Yup.string()
+  //     .required("This section can not be empty.")
+  //     .min(3, "Can not be less than 3 characters."),
+  //   password: Yup.string()
+  //     .required("Password is necessary.")
+  //     .min(8, "Minumum 8 character."),
+  //   mail: Yup.string()
+  //     .required("This section can not be empty.")
+  //     .email("Please enter valid mail address."),
+  //   active: Yup.boolean().oneOf([true], "Terms of Services must be accepted."),
+  // });
+
+  // console.log("siparis ozetim ", formData);
   const textValue = (even) => {
     setTextName(even.target.value);
   };
