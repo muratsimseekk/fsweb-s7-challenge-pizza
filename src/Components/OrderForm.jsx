@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import * as Yup from "yup";
+
 import Sizing from "./Sizing";
 import Additional from "./Additional";
 import GiveAnOrder from "./GiveAnOrder";
@@ -14,9 +16,18 @@ const OrderForm = () => {
   const [additionalPrice, setAdditionalPrice] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [textName, setTextName] = useState("");
-
   const [orderNote, setOrderNote] = useState("");
 
+  const [formData, setFormData] = useState({
+    pizzaSize: "",
+    pizzaDough: "",
+    addItems: "",
+    fullName: "",
+    orderQuantity: "",
+    totalBasket: "",
+  });
+
+  console.log("siparis ozetim ", formData);
   const textValue = (even) => {
     setTextName(even.target.value);
   };
@@ -26,7 +37,7 @@ const OrderForm = () => {
   const orderNoteChange = (x) => {
     setOrderNote(x.target.value);
   };
-  console.log(orderNote);
+  // console.log(orderNote);
   const countUp = () => {
     setQuantity(quantity + 1);
   };
@@ -64,11 +75,11 @@ const OrderForm = () => {
   };
 
   useEffect(() => {
-    console.log(quantity);
+    // console.log(quantity);
   }, [quantity]);
 
   useEffect(() => {
-    console.log("item arrayi ", itemsArr);
+    // console.log("item arrayi ", itemsArr);
 
     let price = 0;
 
@@ -77,7 +88,7 @@ const OrderForm = () => {
     setAdditionalPrice(price);
   }, [itemsArr]);
 
-  console.log("ekstralarin ucreti ", additionalPrice);
+  // console.log("ekstralarin ucreti ", additionalPrice);
 
   useEffect(() => {
     // console.log("useeffect icerisindeki size degeri  :  ", size);
@@ -119,6 +130,24 @@ const OrderForm = () => {
     setTickPrice(price);
   }, [tickness]);
 
+  useEffect(() => {
+    formData.pizzaSize = size;
+    formData.pizzaDough = tickness;
+    formData.addItems = itemsArr;
+    formData.fullName = textName;
+    formData.orderQuantity = quantity;
+    formData.totalBasket =
+      (totalPrice + tickPrice + additionalPrice) * quantity;
+  }, [
+    size,
+    tickness,
+    itemsArr,
+    textName,
+    totalPrice,
+    tickPrice,
+    additionalPrice,
+    quantity,
+  ]);
   //   console.log("globalde tick price;", tickPrice);
 
   return (
