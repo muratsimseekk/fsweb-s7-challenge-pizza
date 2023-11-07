@@ -1,6 +1,6 @@
 import React from "react";
 
-function GiveAnOrder({ totalPrice, tickPrice }) {
+function GiveAnOrder({ totalPrice, tickPrice, additionalPrice }) {
   return (
     <div className=" flex flex-row justify-between mb-40">
       <div className="w-[30%] pt-6 flex ">
@@ -24,7 +24,9 @@ function GiveAnOrder({ totalPrice, tickPrice }) {
           </div>
           <div className="flex justify-evenly mt-3">
             <h4 className="w-[50%]"> Toplam </h4>
-            <p className="w-[25%]">{totalPrice + tickPrice}₺</p>
+            <p className="w-[25%]">
+              {totalPrice + tickPrice + additionalPrice}₺
+            </p>
           </div>
         </div>
         <button className="p-3 bg-yellow-400 text-zinc-800 rounded-md">

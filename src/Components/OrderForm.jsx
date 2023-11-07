@@ -10,12 +10,46 @@ const OrderForm = () => {
   const [tickness, setTickness] = useState("Normal");
   const [totalPrice, setTotalPrice] = useState(productInPrice);
   const [tickPrice, setTickPrice] = useState(0);
+  const [itemsArr, setItemsArr] = useState([]);
+  const [additionalPrice, setAdditionalPrice] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+
   const handleRadioChange = (event) => {
     setSize(event.target.value);
   };
   const optionSelection = (e) => {
     setTickness(e.target.value);
   };
+  const checkSelection = (event) => {
+    const item = event.target.name;
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      if (itemsArr.length < 10) {
+        setItemsArr([...itemsArr, item]);
+      }
+      // } else if(itemsArr.length<4){
+      //   console.log("4ten fazla secin");
+      // }
+      else {
+        console.log("10 dan fazla secemezsin ");
+      }
+    } else {
+      const updatedItem = itemsArr.filter((i) => i !== item);
+      setItemsArr(updatedItem);
+    }
+  };
+  useEffect(() => {
+    console.log("item arrayi ", itemsArr);
+
+    let price = 0;
+
+    price = price + itemsArr.length * 5;
+
+    setAdditionalPrice(price);
+  }, [itemsArr]);
+
+  console.log("ekstralarin ucreti ", additionalPrice);
 
   useEffect(() => {
     // console.log("useeffect icerisindeki size degeri  :  ", size);
@@ -36,7 +70,7 @@ const OrderForm = () => {
     setTotalPrice(price);
   }, [size]);
 
-  console.log("globalde totalprice", totalPrice);
+  // console.log("globalde totalprice", totalPrice);
 
   useEffect(() => {
     // console.log("hamur icin baslangic fiyati", tickPrice);
@@ -56,6 +90,8 @@ const OrderForm = () => {
     }
     setTickPrice(price);
   }, [tickness]);
+
+  //   console.log("globalde tick price;", tickPrice);
 
   return (
     <div className="w-screen  bg-stone-100 flex flex-col items-center">
@@ -108,10 +144,14 @@ const OrderForm = () => {
           tickness={tickness}
           optionSelection={optionSelection}
         />
-        <Additional />
+        <Additional checkSelection={checkSelection} itemsArr={itemsArr} />
         <Info />
         <hr className="mt-5 mb-5" />
-        <GiveAnOrder totalPrice={totalPrice} tickPrice={tickPrice} />
+        <GiveAnOrder
+          totalPrice={totalPrice}
+          tickPrice={tickPrice}
+          additionalPrice={additionalPrice}
+        />
       </div>
     </div>
   );
