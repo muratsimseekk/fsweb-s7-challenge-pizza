@@ -17,11 +17,10 @@ function GiveAnOrder({
         >
           -
         </button>
-        <input
-          value={quantity}
-          type="number"
-          className="w-[33%] h-[30%] text-center rounded-sm"
-        />
+        <p className="w-[33%] h-[30%] text-center pt-3 rounded-sm">
+          {quantity}
+        </p>
+
         <button
           onClick={countUp}
           className="w-[33%] bg-yellow-400 h-[30%]  rounded-md"
