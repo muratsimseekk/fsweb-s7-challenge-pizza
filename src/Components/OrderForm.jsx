@@ -13,7 +13,20 @@ const OrderForm = () => {
   const [itemsArr, setItemsArr] = useState([]);
   const [additionalPrice, setAdditionalPrice] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [textName, setTextName] = useState("");
 
+  const [orderNote, setOrderNote] = useState("");
+
+  const textValue = (even) => {
+    setTextName(even.target.value);
+  };
+
+  // console.log(textName);
+
+  const orderNoteChange = (x) => {
+    setOrderNote(x.target.value);
+  };
+  console.log(orderNote);
   const countUp = () => {
     setQuantity(quantity + 1);
   };
@@ -160,7 +173,12 @@ const OrderForm = () => {
           optionSelection={optionSelection}
         />
         <Additional checkSelection={checkSelection} itemsArr={itemsArr} />
-        <Info />
+        <Info
+          textValue={textValue}
+          textName={textName}
+          orderNoteChange={orderNoteChange}
+          orderNote={orderNote}
+        />
         <hr className="mt-5 mb-5" />
         <GiveAnOrder
           totalPrice={totalPrice}
