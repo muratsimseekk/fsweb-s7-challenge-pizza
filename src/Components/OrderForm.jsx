@@ -228,7 +228,7 @@ const OrderForm = () => {
   //   console.log("globalde tick price;", tickPrice);
 
   return (
-    <form onSubmit={submitHandler}>
+    <form id="pizza-form" onSubmit={submitHandler}>
       <div className="w-screen  bg-stone-100 flex flex-col items-center">
         <div className="w-[100%] h-[16vh] bg-red-600"></div>
         <div className="w-[40%] h-[16vh] bg-red-600 absolute ">

@@ -17,7 +17,10 @@ function Info({ textValue, textName, orderNote, orderNoteChange }) {
         />
       </div>
       <div className=" mt-5 flex flex-col gap-3 ">
-        <h3 className="text-zinc-800 font-semibold font-barlow">
+        <h3
+          id="special-text"
+          className="text-zinc-800 font-semibold font-barlow"
+        >
           Sipariş Notu
         </h3>
         <input

@@ -13,6 +13,7 @@ function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
               type="radio"
               name="myRadio"
               value="sm"
+              id="small"
               checked={size === "sm"}
               onChange={handleRadioChange}
             />
@@ -23,6 +24,7 @@ function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
               type="radio"
               name="myRadio"
               value="md"
+              id="medium"
               checked={size === "md"}
               onChange={handleRadioChange}
             />
@@ -33,6 +35,7 @@ function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
               type="radio"
               name="myRadio"
               value="lg"
+              id="large"
               checked={size === "lg"}
               onChange={handleRadioChange}
             />
