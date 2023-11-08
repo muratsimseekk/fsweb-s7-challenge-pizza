@@ -52,6 +52,7 @@ function Sizing({ size, handleRadioChange, tickness, optionSelection }) {
             className="bg-zinc-200 text-[13px] text-zinc-800"
             value={tickness}
             onChange={optionSelection}
+            id="ticknessDough"
           >
             <option value="" disabled>
               Hamur Kalınlığı

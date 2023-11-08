@@ -18,6 +18,7 @@ function Additional({ checkSelection, itemsArr }) {
               type="checkbox"
               name="Pepperoni"
               onChange={checkSelection}
+              id="pepperoni"
               disabled={
                 itemsArr.length >= 10 && !itemsArr.includes("Pepperoni")
               }
@@ -30,6 +31,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Sosis"
+              id="sosis"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Sosis")}
             />
@@ -41,6 +43,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Kanada Jambonu"
+              id="jambon"
               onChange={checkSelection}
               disabled={
                 itemsArr.length >= 10 && !itemsArr.includes("Kanada Jambonu")
@@ -54,6 +57,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Tavuk Izgara"
+              id="izgara"
               onChange={checkSelection}
               disabled={
                 itemsArr.length >= 10 && !itemsArr.includes("Tavuk Izgara")
@@ -67,6 +71,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Soğan"
+              id="sogan"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Soğan")}
             />
@@ -78,6 +83,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Domates"
+              id="domates"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Domates")}
             />
@@ -89,6 +95,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Mısır"
+              id="misir"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Mısır")}
             />
@@ -100,6 +107,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Sucuk"
+              id="sucuk"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Sucuk")}
             />
@@ -111,6 +119,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Jalepeno"
+              id="jalepeno"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Jalepeno")}
             />
@@ -122,6 +131,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Sarımsak"
+              id="sarimsak"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Sarımsak")}
             />
@@ -133,6 +143,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Biber"
+              id="biber"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Biber")}
             />
@@ -144,6 +155,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Salam"
+              id="salam"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Salam")}
             />
@@ -155,6 +167,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Ananas"
+              id="ananas"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Ananas")}
             />
@@ -166,6 +179,7 @@ function Additional({ checkSelection, itemsArr }) {
             <input
               type="checkbox"
               name="Kabak"
+              id="kabak"
               onChange={checkSelection}
               disabled={itemsArr.length >= 10 && !itemsArr.includes("Kabak")}
             />
