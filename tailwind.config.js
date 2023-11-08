@@ -8,6 +8,7 @@ export default {
         barlow: ["Barlow", "sans-serif"],
         bebas: ["Bebas Neue", "sans-serif"],
         quattrocento: ["Quattrocento", "serif"],
+        satisfy: ["Satisfy", "serif"],
       },
     },
   },

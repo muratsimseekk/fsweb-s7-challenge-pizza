@@ -31,7 +31,7 @@ const OrderForm = () => {
   const [orderNote, setOrderNote] = useState("");
   const [sentData, setSentData] = useState([]);
 
-  const [formValid, setFormValid] = useState(false);
+  // const [formValid, setFormValid] = useState(false);
 
   const [formError, setFormError] = useState({
     pizzaSize: "",
