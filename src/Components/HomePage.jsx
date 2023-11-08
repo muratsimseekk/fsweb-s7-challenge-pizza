@@ -9,11 +9,14 @@ export default function HomePage() {
   };
   return (
     <>
-      <h1 className="absolute left-[600px] top-[70px] text-[34px] font-londrina text-white">
-        Teknolojik Yemekler
-      </h1>
-      <div className="w-screen  h-[100vh] flex flex-col justify-between items-center bg-red-600 text-white">
-        <div className="= w-3/5 mt-32 h-80 justify-center items-center flex flex-col gap-5 ">
+      <div className="w-screen bg-red-600 h-[100vh] flex flex-col justify-between items-center">
+        <div className="text-center p-[60px]">
+          <h1 className="bg-red-600 text-[34px] font-londrina text-white ">
+            Teknolojik Yemekler
+          </h1>
+        </div>
+
+        <div className="w-3/5 text-center bg-red-600 text-white">
           <div className="text-center text-[60px] uppercase font-bebas font-thin leading-[75px]  ">
             KOD ACIKTIRIR
             <br />
@@ -27,7 +30,10 @@ export default function HomePage() {
             ACIKTIM
           </button>
         </div>
-        <img className="w-[70%] " src="src/Components/banner.png" />
+
+        <div className="w-[70%] mr-auto ml-auto">
+          <img src="src/Components/banner.png" />
+        </div>
       </div>
     </>
   );
