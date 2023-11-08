@@ -5,7 +5,16 @@ import Sizing from "./Sizing";
 import Additional from "./Additional";
 import GiveAnOrder from "./GiveAnOrder";
 import Info from "./Info";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
+
+const formData = {
+  pizzaSize: "",
+  pizzaDough: "",
+  addItems: [],
+  fullName: "",
+  orderQuantity: "",
+  totalBasket: "",
+};
 
 const OrderForm = () => {
   const history = useHistory();
@@ -22,15 +31,7 @@ const OrderForm = () => {
   const [orderNote, setOrderNote] = useState("");
   const [sentData, setSentData] = useState([]);
 
-  const [formValid, setFormValid] = useState(true);
-  const [formData, setFormData] = useState({
-    pizzaSize: "",
-    pizzaDough: "",
-    addItems: [],
-    fullName: "",
-    orderQuantity: "",
-    totalBasket: "",
-  });
+  const [formValid, setFormValid] = useState(false);
 
   const [formError, setFormError] = useState({
     pizzaSize: "",
@@ -45,40 +46,7 @@ const OrderForm = () => {
     history.push("./");
   };
 
-  let formDataSchema = Yup.object().shape({
-    fullName: Yup.string()
-      .required("İsim alanı boş bırakılamaz.")
-      .min(2, "Isim 2 karakterden daha az olamaz."),
-    pizzaSize: Yup.string().required("Pizza boyutu seçin ."),
-    addItems: Yup.array()
-      .required("En az 4 adet malzeme seçin .")
-      .min(4, "En az 4 adet malzeme seçin."),
-    pizzaDough: Yup.string().required("Geçerli bir pizza hamuru seçin ."),
-
-    orderQuantity: Yup.string().required("Lütfen en az 1 ürün seçimi yapın."),
-    totalBasket: Yup.string().required("Lütfen ödeme için ürün girin."),
-  });
-
-  useEffect(() => {
-    formDataSchema.isValid(formData).then((valid) => setFormValid(valid));
-  }, [formData]);
-
-  const checkValidationFor = (field, value) => {
-    Yup.reach(formDataSchema, field)
-      .validate(value)
-      .then((valid) => {
-        setFormError({ ...formError, [field]: "" });
-      })
-      .catch((err) => {
-        console.log("HATA! ", field, err.errors[0]);
-
-        setFormError((prevFormErrors) => ({
-          ...prevFormErrors,
-          [field]: err.errors[0],
-        }));
-      });
-  };
-  // console.log("siparis ozetim ", formData);
+  console.log("siparis ozetim ", formData);
   const textValue = (even) => {
     setTextName(even.target.value);
   };
@@ -124,32 +92,64 @@ const OrderForm = () => {
       setItemsArr(updatedItem);
     }
   };
+  let formDataSchema = Yup.object().shape({
+    fullName: Yup.string()
+      .required("İsim alanı boş bırakılamaz.")
+      .min(2, "Isim 2 karakterden daha az olamaz."),
+    pizzaSize: Yup.string().required("Pizza boyutu seçin ."),
+    addItems: Yup.array()
+      .required("En az 4 adet malzeme seçin .")
+      .min(4, "En az 4 adet malzeme seçin."),
+    pizzaDough: Yup.string().required("Geçerli bir pizza hamuru seçin ."),
+
+    orderQuantity: Yup.number().required("Lütfen en az 1 ürün seçimi yapın."),
+    totalBasket: Yup.number().required("Lütfen ödeme için ürün girin."),
+  });
+
+  const checkValidationFor = async (field, value) => {
+    try {
+      await Yup.reach(formDataSchema, field).validate(value);
+      setFormError((prevFormErrors) => ({ ...prevFormErrors, [field]: "" }));
+    } catch (err) {
+      console.log("HATA! ", field, err.errors[0]);
+      setFormError((prevFormErrors) => ({
+        ...prevFormErrors,
+        [field]: err.errors[0],
+      }));
+    }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
     for (let key in formData) {
-      //   console.log(
-      //     "checkValidationFor(key, formData[key]) > ",
-      //     key,
-      //     formData[key]
-      //   );
       checkValidationFor(key, formData[key]);
     }
-    if (formValid) {
+  };
+
+  useEffect(() => {
+    if (Object.values(formError).every((error) => !error)) {
       axios
         .post("https://reqres.in/api/users", formData)
         .then((response) => {
+          // Yollanan veriyi sentData'ya atadık.
           setSentData(response.data);
           // İşlem başarılı olduğunda yapılacak işlemler
-          console.log("Veri başarıyla gönderildi. ");
+          console.log("Veri başarıyla gönderildi. ", response.data);
+          // Veri gönderildikten sonra yönlendirme işlemini burada yapabiliriz
+          history.push("./summary");
         })
-
         .catch((error) => {
           // İşlem sırasında bir hata olursa yapılacak işlemler
           console.error("Veri gönderilirken hata oluştu:", error);
         });
     }
-  };
+  }, [formError]);
+
+  // useEffect(() => {
+  //   if (Object.values(formError).every((error) => !error)) {
+  //     history.push("./summary");
+  //   }
+  // }, [formError]);
 
   useEffect(() => {
     // console.log(quantity);
@@ -297,6 +297,7 @@ const OrderForm = () => {
             countUp={countUp}
             countDown={countDown}
             quantity={quantity}
+            submitHandler={submitHandler}
           />
         </div>
       </div>

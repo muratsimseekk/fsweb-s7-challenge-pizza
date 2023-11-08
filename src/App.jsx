@@ -3,7 +3,7 @@ import HomePage from "./Components/HomePage";
 import { Route, Link } from "react-router-dom";
 import OrderForm from "./Components/OrderForm";
 import OrderReceived from "./Components/OrderReceived";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 function App() {
   return (
     <>

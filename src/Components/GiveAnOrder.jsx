@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 function GiveAnOrder({
   totalPrice,
@@ -7,7 +8,12 @@ function GiveAnOrder({
   countUp,
   countDown,
   quantity,
+  submitHandler,
 }) {
+  const history = useHistory();
+
+  useEffect(() => {}, []);
+
   return (
     <div className=" flex flex-row justify-between mb-40">
       <div className="w-[30%] pt-6 flex ">
@@ -46,7 +52,10 @@ function GiveAnOrder({
             </p>
           </div>
         </div>
-        <button className="p-3 bg-yellow-400 text-zinc-800 rounded-md">
+        <button
+          onClick={submitHandler}
+          className="p-3 bg-yellow-400 text-zinc-800 rounded-md"
+        >
           SİPARİŞ VER{" "}
         </button>
       </div>
