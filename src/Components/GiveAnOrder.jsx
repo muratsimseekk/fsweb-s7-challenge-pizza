@@ -10,8 +10,6 @@ function GiveAnOrder({
   quantity,
   submitHandler,
 }) {
-  const history = useHistory();
-
   useEffect(() => {}, []);
 
   return (

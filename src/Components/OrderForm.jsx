@@ -6,6 +6,7 @@ import Additional from "./Additional";
 import GiveAnOrder from "./GiveAnOrder";
 import Info from "./Info";
 import { useHistory } from "react-router-dom";
+import { data } from "autoprefixer";
 
 const formData = {
   pizzaSize: "",
@@ -29,7 +30,7 @@ const OrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [textName, setTextName] = useState("");
   const [orderNote, setOrderNote] = useState("");
-  const [sentData, setSentData] = useState([]);
+  // const [sentData, setSentData] = useState([]);
 
   // const [formValid, setFormValid] = useState(false);
 
@@ -131,12 +132,16 @@ const OrderForm = () => {
       axios
         .post("https://reqres.in/api/users", formData)
         .then((response) => {
-          // Yollanan veriyi sentData'ya atadık.
-          setSentData(response.data);
           // İşlem başarılı olduğunda yapılacak işlemler
           console.log("Veri başarıyla gönderildi. ", response.data);
+
+          const dataAway = response.data;
+
           // Veri gönderildikten sonra yönlendirme işlemini burada yapabiliriz
-          history.push("./summary");
+          history.push({
+            pathname: "/summary",
+            state: dataAway, // your data array of objects
+          });
         })
         .catch((error) => {
           // İşlem sırasında bir hata olursa yapılacak işlemler

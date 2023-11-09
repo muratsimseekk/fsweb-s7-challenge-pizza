@@ -1,6 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const OrderReceived = () => {
+  const location = useLocation();
+  let takeData = {};
+  if (location.state) {
+    takeData = location.state; // Veriyi location üzerinden alıyoruz
+    console.log("gelen data", takeData);
+  } else {
+    console.log("Veri yok");
+  }
   return (
     <>
       <div className="bg-red-600 w-screen h-[100vh] flex flex-col justify-around items-center">
@@ -12,7 +21,7 @@ const OrderReceived = () => {
             <p className="font-satisfy text-[35px] text-yellow-500 -mb-4">
               lezzetin yolda
             </p>
-            <h1 className="font-bebas text-[90px] text-white tracking-wider">
+            <h1 className="font-bebas text-[90px] text-center text-white tracking-wider">
               SİPARİŞ Alındı
             </h1>
           </div>
@@ -25,15 +34,25 @@ const OrderReceived = () => {
             <div className="w-[40%]">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-4 ">
-                  <h1>
-                    Boyut: <span>L</span>
+                  <h1 className="text-zinc-300">
+                    Boyut:{" "}
+                    <span className="uppercase text-white">
+                      {takeData.pizzaSize}
+                    </span>
                   </h1>
-                  <h1>
-                    Hamur : <span>Süpper İnce</span>{" "}
+                  <h1 className="text-zinc-300">
+                    Hamur :{" "}
+                    <span className="uppercase text-white">
+                      {takeData.pizzaDough}
+                    </span>{" "}
                   </h1>
-                  <h1>
+                  <h1 className="text-zinc-300">
                     Ek Malzemeler:{" "}
-                    <span>Pepperoni, Sosis, Mısır, Ananas, Jalepeno*</span>{" "}
+                    <span className=" flex flex-wrap gap-3 text-white">
+                      {takeData.addItems.map((item) => {
+                        return `${item}, `;
+                      })}
+                    </span>{" "}
                   </h1>
                 </div>
                 <div></div>
@@ -48,12 +67,12 @@ const OrderReceived = () => {
                 </h3>
                 <div className="flex justify-between ">
                   <h4 className="w-[50%]"> Seçimler </h4>
-                  <p className="w-[25%]">25₺</p>
+                  <p className="w-[25%]">{takeData.addItems.length * 5}₺</p>
                 </div>
                 <div className="flex justify-between ">
                   <h4 className="w-[50%]"> Toplam </h4>
                   <p className="w-[25%]">
-                    150
+                    {takeData.totalBasket}₺
                     {/* {(totalPrice + tickPrice + additionalPrice) * quantity}₺ */}
                   </p>
                 </div>
