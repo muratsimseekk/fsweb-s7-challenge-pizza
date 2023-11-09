@@ -38,7 +38,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[10vh] bg-slate-700 flex justify-center text-zinc-800 bg-white">
+        <div className="w-[100%] h-[15vh]  flex justify-center text-zinc-800 bg-white">
           <div className="flex justify-between w-[75%] gap-5">
             <div className="flex gap-3">
               <img src="src/img/kore.svg" />
@@ -63,18 +63,18 @@ export default function HomePage() {
             <div className="flex gap-3">
               <img src="src/img/fast-food.svg" />
               <h1 className="font-barlow flex items-center gap-1">
-                Fast food
+                Fast <span>food</span>
               </h1>{" "}
             </div>
             <div className="flex gap-3">
               <img src="src/img/icecek.svg" />
               <h1 className="font-barlow flex items-center gap-1">
-                Gazlı İçecek
+                Gazlı <span>İçecek</span>
               </h1>
             </div>
           </div>
         </div>
-        <div className="w-[100%] bg-amber-100">
+        <div className="w-[100%] bg-amber-50">
           <div className="w-[65%] mx-auto mt-10 flex flex-col gap-10">
             <div className="w-[100%] bg-black  flex justify-between p-2">
               <div className="w-[48%]  bg-yellow-500 rounded-md">
@@ -140,13 +140,106 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex justify-between mb-20">
-              <div className="h-[200px] w-[32%] bg-slate-700"></div>
-              <div className="h-[200px] w-[32%] bg-slate-700"></div>
-              <div className="h-[200px] w-[32%] bg-slate-700"></div>
+              <div className=" w-[32%] bg-white ">
+                <img src="src/adv-aseets/food-1.png" className="w-[100%]" />
+              </div>
+              <div className=" w-[32%] bg-white ">
+                <img src="src/adv-aseets/food-2.png" className="w-[100%]" />
+              </div>
+              <div className=" w-[32%] bg-white ">
+                <img src="src/adv-aseets/food-3.png" className="w-[100%]" />
+              </div>
             </div>
           </div>
         </div>
-        <footer className="h-[300px] w-[100%] bg-black "></footer>
+        <footer className="h-[500px] w-[100%] bg-black flex justify-center">
+          <div className="w-[65%] h-[100%] bg-purple-300">
+            <div className="h-[80%]  flex justify-between">
+              <div className="bg-blue-300 w-[25%]">
+                <div>
+                  <h1>
+                    Teknolojik <span>Yemekler</span>
+                  </h1>
+                </div>
+                <div>
+                  <div>
+                    <img src="src/adv-aseets/icons/icon-1.png" />
+                    <p>
+                      341 Londonderry Road, <span>Istanbul Türkiye</span>
+                    </p>
+                  </div>
+                  <div>
+                    <img src="src/adv-aseets/icons/icon-2.png" />
+                    <p>aciktim@teknolojikyemekler.com</p>
+                  </div>
+                  <div>
+                    <img src="src/adv-aseets/icons/icon-3.png" />
+                    <p>+90 216 123 45 67</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-green-300 w-[25%] flex flex-col justify-between">
+                <div>
+                  <h1>Sıccacık Menuler</h1>
+                </div>
+                <div>
+                  <p>Terminal Pizza</p>
+                  <p>5 Kişilik Hackathlon Pizza</p>
+                  <p>useEffect Tavuklu Pizza</p>
+                  <p>Beyaz Console Frosty</p>
+                  <p>Testler Geçti Mutlu Burger</p>
+                  <p>Position Absolute Acı Burger</p>
+                </div>
+              </div>
+              <div className="bg-rose-600 w-[35%] flex flex-col justify-between">
+                <div>
+                  <h1>Instagram</h1>
+                </div>
+                <div>
+                  <ul className="flex flex-wrap gap-2">
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-0.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-1.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-2.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-3.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-4.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="src/adv-aseets/insta/li-5.png"
+                        className="rounded-md"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="h-[20%] bg-pink-200"></div>
+          </div>
+        </footer>
       </div>
     </>
   );
