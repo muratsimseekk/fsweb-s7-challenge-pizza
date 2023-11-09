@@ -4,12 +4,19 @@ import { Route, Link } from "react-router-dom";
 import OrderForm from "./Components/OrderForm";
 import OrderReceived from "./Components/OrderReceived";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
+
 function App() {
+  const [sentData, setSentData] = useState(null);
   return (
     <>
       <Route exact path="/" component={HomePage} />
-      <Route path="/pizza" component={OrderForm} />
-      <Route path="/summary" component={OrderReceived} />
+      <Route path="/pizza">
+        <OrderForm setSentData={setSentData} />
+      </Route>
+      <Route path="/summary">
+        <OrderReceived sentData={sentData} />
+      </Route>
     </>
   );
 }

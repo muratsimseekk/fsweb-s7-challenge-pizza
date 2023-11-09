@@ -1,6 +1,6 @@
 import React from "react";
 
-function Info({ textValue, textName, orderNote, orderNoteChange }) {
+function Info({ textValue, textName, orderNote, orderNoteChange, formError }) {
   return (
     <>
       <div className="mt-5 flex flex-col gap-3">
@@ -15,6 +15,7 @@ function Info({ textValue, textName, orderNote, orderNoteChange }) {
           value={textName}
           onChange={textValue}
         />
+        <p className="text-red-600">{formError.fullName}</p>
       </div>
       <div className=" mt-5 flex flex-col gap-3 ">
         <h3 className="text-zinc-800 font-semibold font-barlow">

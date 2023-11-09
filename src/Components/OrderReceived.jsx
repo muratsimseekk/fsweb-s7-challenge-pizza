@@ -1,15 +1,14 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
-const OrderReceived = () => {
-  const location = useLocation();
-  let takeData = {};
-  if (location.state) {
-    takeData = location.state; // Veriyi location üzerinden alıyoruz
-    console.log("gelen data", takeData);
-  } else {
-    console.log("Veri yok");
-  }
+const OrderReceived = ({ sentData }) => {
+  // const location = useLocation();
+  // let takeData = {};
+  // if (location.state) {
+  //   takeData = location.state; // Veriyi location üzerinden alıyoruz
+  //   console.log("gelen data", takeData);
+  // } else {
+  //   console.log("Veri yok");
+  // }
   return (
     <>
       <div className="bg-red-600 w-screen h-[100vh] flex flex-col justify-around items-center">
@@ -37,19 +36,19 @@ const OrderReceived = () => {
                   <h1 className="text-zinc-300">
                     Boyut:{" "}
                     <span className="uppercase text-white">
-                      {takeData.pizzaSize}
+                      {sentData.pizzaSize}
                     </span>
                   </h1>
                   <h1 className="text-zinc-300">
                     Hamur :{" "}
                     <span className="uppercase text-white">
-                      {takeData.pizzaDough}
+                      {sentData.pizzaDough}
                     </span>{" "}
                   </h1>
                   <h1 className="text-zinc-300">
                     Ek Malzemeler:{" "}
                     <span className=" flex flex-wrap gap-3 text-white">
-                      {takeData.addItems.map((item) => {
+                      {sentData.addItems.map((item) => {
                         return `${item}, `;
                       })}
                     </span>{" "}
@@ -67,12 +66,12 @@ const OrderReceived = () => {
                 </h3>
                 <div className="flex justify-between ">
                   <h4 className="w-[50%]"> Seçimler </h4>
-                  <p className="w-[25%]">{takeData.addItems.length * 5}₺</p>
+                  <p className="w-[25%]">{sentData.addItems.length * 5}₺</p>
                 </div>
                 <div className="flex justify-between ">
                   <h4 className="w-[50%]"> Toplam </h4>
                   <p className="w-[25%]">
-                    {takeData.totalBasket}₺
+                    {sentData.totalBasket}₺
                     {/* {(totalPrice + tickPrice + additionalPrice) * quantity}₺ */}
                   </p>
                 </div>

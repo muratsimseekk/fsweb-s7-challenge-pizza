@@ -1,6 +1,6 @@
 import React from "react";
 
-function Additional({ checkSelection, itemsArr }) {
+function Additional({ checkSelection, itemsArr, formError }) {
   return (
     <>
       <div className="text-zinc-800  mt-5">
@@ -10,6 +10,7 @@ function Additional({ checkSelection, itemsArr }) {
         <p className="text-zinc-500 text-base text-[13px] font-barlow leading-7">
           En Fazla 10 malzeme seçebilirsiniz. 5₺
         </p>
+        <p className="text-red-600">{formError.addItems}</p>
       </div>
       <div className=" mt-2 flex flex-row flex-wrap gap-2 font-barlow text-zinc-500 text-base accent-blue-600 ">
         <div className="w-[30%]">

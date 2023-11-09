@@ -6,7 +6,6 @@ import Additional from "./Additional";
 import GiveAnOrder from "./GiveAnOrder";
 import Info from "./Info";
 import { useHistory } from "react-router-dom";
-import { data } from "autoprefixer";
 
 const formData = {
   pizzaSize: "",
@@ -17,7 +16,7 @@ const formData = {
   totalBasket: "",
 };
 
-const OrderForm = () => {
+const OrderForm = ({ setSentData }) => {
   const history = useHistory();
 
   const [productInPrice, setProductInPrice] = useState(85.5);
@@ -30,7 +29,6 @@ const OrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [textName, setTextName] = useState("");
   const [orderNote, setOrderNote] = useState("");
-  // const [sentData, setSentData] = useState([]);
 
   // const [formValid, setFormValid] = useState(false);
 
@@ -134,14 +132,15 @@ const OrderForm = () => {
         .then((response) => {
           // İşlem başarılı olduğunda yapılacak işlemler
           console.log("Veri başarıyla gönderildi. ", response.data);
+          setSentData(response.data);
+          history.push("./summary");
+          // const dataAway = response.data;
 
-          const dataAway = response.data;
-
-          // Veri gönderildikten sonra yönlendirme işlemini burada yapabiliriz
-          history.push({
-            pathname: "/summary",
-            state: dataAway, // your data array of objects
-          });
+          // // Veri gönderildikten sonra yönlendirme işlemini burada yapabiliriz
+          // history.push({
+          //   pathname: "/summary",
+          //   state: dataAway, // your data array of objects
+          // });
         })
         .catch((error) => {
           // İşlem sırasında bir hata olursa yapılacak işlemler
@@ -287,8 +286,13 @@ const OrderForm = () => {
             tickness={tickness}
             optionSelection={optionSelection}
           />
-          <Additional checkSelection={checkSelection} itemsArr={itemsArr} />
+          <Additional
+            checkSelection={checkSelection}
+            formError={formError}
+            itemsArr={itemsArr}
+          />
           <Info
+            formError={formError}
             textValue={textValue}
             textName={textName}
             orderNoteChange={orderNoteChange}

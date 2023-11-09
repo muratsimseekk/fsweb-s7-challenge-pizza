@@ -33,12 +33,12 @@ export default function HomePage() {
               </button>
             </div>
 
-            <div className="w-[70%] mr-auto ml-auto">
+            <div className="w-[70%] mx-auto">
               <img src="src/Components/banner.png" />
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[15vh]  flex justify-center text-zinc-800 bg-white">
+        <div className="w-[100%] p-4  flex justify-center text-zinc-800 bg-white">
           <div className="flex justify-between w-[75%] gap-5">
             <div className="flex gap-3">
               <img src="src/img/kore.svg" />
@@ -76,7 +76,7 @@ export default function HomePage() {
         </div>
         <div className="w-[100%] bg-amber-50">
           <div className="w-[65%] mx-auto mt-10 flex flex-col gap-10">
-            <div className="w-[100%] bg-black  flex justify-between p-2">
+            <div className="w-[100%]   flex justify-between p-2">
               <div className="w-[48%] rounded-md relative">
                 <img
                   src="src/adv-aseets/kart-1.png"
@@ -99,21 +99,48 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="w-[48%]  flex flex-col justify-between">
-                <div className="w-[100%] ">
+                <div className="w-[100%] relative">
                   <img
                     src="src/adv-aseets/kart-2.png"
                     className="bg-cover w-[100%] rounded-lg"
                   />
+                  <div className="text-white absolute bottom-10 left-8 ">
+                    <h1 className="flex flex-col text-[20px] gap-1">
+                      Hackathlon <span>Burger Menü</span>
+                    </h1>
+                    <button
+                      type="button"
+                      className=" bg-white w-[70%] p-2 text-[10px] rounded-full text-red-600 mt-4"
+                    >
+                      {" "}
+                      SİPARİŞ VER
+                    </button>
+                  </div>
                 </div>
-                <div className="w-[100%] ">
+                <div className="w-[100%] relative">
                   <img
                     src="src/adv-aseets/kart-3.png"
                     className="bg-cover w-[100%] rounded-lg"
                   />
+                  <div className="text-white absolute bottom-10 left-8 ">
+                    <h1 className="flex flex-col text-[20px] gap-1 text-black">
+                      <span>
+                        <span className="text-red-600">Çoooook</span> hızlı
+                      </span>{" "}
+                      <span>npm gibi kurye</span>
+                    </h1>
+                    <button
+                      type="button"
+                      className=" bg-white w-[70%] p-2 text-[10px] rounded-full text-red-600 mt-4"
+                    >
+                      {" "}
+                      SİPARİŞ VER
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center bg-yellow-200">
+            <div className="flex flex-col justify-center items-center ">
               <p className="font-satisfy text-[30px] text-red-600">
                 {" "}
                 en çok paketlenen menüler
@@ -192,10 +219,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <footer className="h-[430px] w-[100%] bg-black flex justify-center text-white">
+        <footer className=" w-[100%] bg-black flex justify-center text-white">
           <div className="w-[65%] h-[100%] flex flex-col justify-around">
-            <div className="h-[80%] flex justify-between items-center border-solid border-b-2 my-6 ">
-              <div className=" w-[30%] h-[300px] flex flex-col justify-between">
+            <div className="flex justify-between flex-wrap  border-solid border-b-2 py-8  ">
+              <div className=" w-[30%]  flex flex-wrap flex-col justify-between gap-10">
                 <div>
                   <h1 className="font-londrina flex flex-col text-[32px] tracking-wider">
                     Teknolojik <span>Yemekler</span>
@@ -210,7 +237,9 @@ export default function HomePage() {
                   </div>
                   <div className="flex gap-4">
                     <img src="src/adv-aseets/icons/icon-2.png" />
-                    <p>aciktim@teknolojikyemekler.com</p>
+                    <p className="text-[13px]">
+                      aciktim@teknolojikyemekler.com
+                    </p>
                   </div>
                   <div className="flex gap-4">
                     <img src="src/adv-aseets/icons/icon-3.png" />
@@ -218,7 +247,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className=" w-[25%] h-[250px] flex flex-col justify-around font-barlow">
+              <div className=" w-[25%]  flex flex-wrap flex-col justify-around font-barlow">
                 <div>
                   <h1 className="text-[25px]">Sıccacık Menuler</h1>
                 </div>
@@ -231,49 +260,42 @@ export default function HomePage() {
                   <p>Position Absolute Acı Burger</p>
                 </div>
               </div>
-              <div className=" w-[35%] h-[280px] flex flex-col justify-between">
+              <div className=" w-[35%] flex flex-wrap flex-col justify-between">
                 <div>
                   <h1 className="font-barlow text-[22px]">Instagram</h1>
                 </div>
                 <div>
-                  <ul className="flex flex-wrap gap-2">
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-0.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-1.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-2.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-3.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-4.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="src/adv-aseets/insta/li-5.png"
-                        className="rounded-md"
-                      />
-                    </li>
-                  </ul>
+                  <div className="flex flex-wrap gap-1">
+                    <img
+                      src="src/adv-aseets/insta/li-0.png"
+                      className="rounded-md"
+                    />
+
+                    <img
+                      src="src/adv-aseets/insta/li-1.png"
+                      className="rounded-md"
+                    />
+
+                    <img
+                      src="src/adv-aseets/insta/li-2.png"
+                      className="rounded-md"
+                    />
+
+                    <img
+                      src="src/adv-aseets/insta/li-3.png"
+                      className="rounded-md"
+                    />
+
+                    <img
+                      src="src/adv-aseets/insta/li-4.png"
+                      className="rounded-md"
+                    />
+
+                    <img
+                      src="src/adv-aseets/insta/li-5.png"
+                      className="rounded-md"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
