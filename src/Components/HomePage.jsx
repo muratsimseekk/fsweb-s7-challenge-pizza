@@ -12,13 +12,16 @@ export default function HomePage() {
       <div className="flex flex-col">
         <div>
           <div className="w-screen bg-red-600  flex flex-col justify-between items-center">
-            <div className="text-center p-[60px]">
+            <div className="text-center p-[45px]">
               <h1 className="bg-red-600 text-[34px] font-londrina text-white ">
                 Teknolojik Yemekler
               </h1>
             </div>
 
             <div className="w-3/5 text-center bg-red-600 text-white">
+              <p className="font-satisfy text-[26px] text-yellow-400">
+                fırsatı kaçırma
+              </p>
               <div className="text-center text-[60px] uppercase font-bebas font-thin leading-[75px]  ">
                 KOD ACIKTIRIR
                 <br />
@@ -193,7 +196,10 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className=" w-[32%] bg-white p-6">
+              <div
+                className=" w-[32%] bg-white p-6 cursor-pointer"
+                onClick={handleClick}
+              >
                 <img src="src/adv-aseets/food-2.png" className="w-[100%]" />
                 <div className="flex flex-col gap-2 mt-4">
                   <h3>Position Absolute Acı Pizza</h3>
