@@ -139,15 +139,40 @@ export default function HomePage() {
                 </h1>
               </div>
             </div>
-            <div className="flex justify-between mb-20">
-              <div className=" w-[32%] bg-white ">
+            <div className="flex justify-between mb-20 font-barlow">
+              <div className=" w-[32%] bg-white p-6">
                 <img src="src/adv-aseets/food-1.png" className="w-[100%]" />
+                <div className="flex flex-col gap-2 mt-4">
+                  <h3>Terminal Pizza</h3>
+                  <div className="flex justify-between">
+                    <p className="text-zinc-500">4.9</p>
+                    <p className="text-zinc-500">(200)</p>
+                    <p>60₺</p>
+                  </div>
+                </div>
               </div>
-              <div className=" w-[32%] bg-white ">
+              <div className=" w-[32%] bg-white p-6">
                 <img src="src/adv-aseets/food-2.png" className="w-[100%]" />
+                <div className="flex flex-col gap-2 mt-4">
+                  <h3>Position Absolute Acı Pizza</h3>
+                  <div className="flex justify-between">
+                    <p className="text-zinc-500">4.9</p>
+                    <p className="text-zinc-500">(928)</p>
+                    <p>85₺</p>
+                  </div>
+                </div>
               </div>
-              <div className=" w-[32%] bg-white ">
+              <div className=" w-[32%] bg-white p-6">
                 <img src="src/adv-aseets/food-3.png" className="w-[100%]" />
+                <div className="flex flex-col gap-2 mt-4">
+                  <h3>useEffect Tavuklu Burger</h3>
+
+                  <div className="flex justify-between">
+                    <p className="text-zinc-500">4.9</p>
+                    <p className="text-zinc-500">(462)</p>
+                    <p>75₺</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
