@@ -75,12 +75,27 @@ export default function HomePage() {
           </div>
         </div>
         <div className="w-[100%] bg-amber-100">
-          <div className="w-[65%] mx-auto mt-10 ">
-            <div className="w-[100%] bg-black h-[200px] flex justify-between">
-              <div className="w-[48%] h-[200px] bg-yellow-500"></div>
-              <div className="w-[48%] h-[200px] bg-blue-400">
-                <div className="w-[100%] h-[100px] bg-green-500"></div>
-                <div className="w-[100%] h-[100px] bg-green-950"></div>
+          <div className="w-[65%] mx-auto mt-10 flex flex-col">
+            <div className="w-[100%] bg-black  flex justify-between p-2">
+              <div className="w-[48%]  bg-yellow-500 rounded-md">
+                <img
+                  src="src/adv-aseets/kart-1.png"
+                  className="bg-cover w-[100%] rounded-lg"
+                />
+              </div>
+              <div className="w-[48%]  flex flex-col justify-between">
+                <div className="w-[100%] ">
+                  <img
+                    src="src/adv-aseets/kart-2.png"
+                    className="bg-cover w-[100%] rounded-lg"
+                  />
+                </div>
+                <div className="w-[100%] ">
+                  <img
+                    src="src/adv-aseets/kart-3.png"
+                    className="bg-cover w-[100%] rounded-lg"
+                  />
+                </div>
               </div>
             </div>
             <div className="flex flex-col justify-center items-center bg-yellow-200">
@@ -128,6 +143,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <footer className="h-[300px] w-[100%] bg-black"></footer>
       </div>
     </>
   );
