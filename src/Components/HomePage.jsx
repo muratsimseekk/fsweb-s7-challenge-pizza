@@ -38,7 +38,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[10vh] bg-slate-700 flex  justify-center text-zinc-800 bg-white">
+        <div className="w-[100%] h-[10vh] bg-slate-700 flex justify-center text-zinc-800 bg-white">
           <div className="flex justify-between w-[75%] gap-5">
             <div className="flex gap-3">
               <img src="src/img/kore.svg" />
@@ -75,7 +75,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="w-[100%] bg-amber-100">
-          <div className="w-[65%] mx-auto mt-10 flex flex-col">
+          <div className="w-[65%] mx-auto mt-10 flex flex-col gap-10">
             <div className="w-[100%] bg-black  flex justify-between p-2">
               <div className="w-[48%]  bg-yellow-500 rounded-md">
                 <img
@@ -99,8 +99,13 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex flex-col justify-center items-center bg-yellow-200">
-              <p> en çok paketlenen menüler</p>
-              <h1>Acıktıran Kodlara Doyuran Lezzetler</h1>
+              <p className="font-satisfy text-[30px] text-red-600">
+                {" "}
+                en çok paketlenen menüler
+              </p>
+              <h1 className="font-barlow uppercase text-[32px] font-bold">
+                Acıktıran Kodlara Doyuran Lezzetler
+              </h1>
             </div>
             <div className="flex justify-between  gap-5">
               <div className="flex gap-3">
