@@ -77,11 +77,26 @@ export default function HomePage() {
         <div className="w-[100%] bg-amber-50">
           <div className="w-[65%] mx-auto mt-10 flex flex-col gap-10">
             <div className="w-[100%] bg-black  flex justify-between p-2">
-              <div className="w-[48%]  bg-yellow-500 rounded-md">
+              <div className="w-[48%] rounded-md relative">
                 <img
                   src="src/adv-aseets/kart-1.png"
                   className="bg-cover w-[100%] rounded-lg"
                 />
+                <div className=" absolute bottom-32 text-white left-8">
+                  <div className="flex flex-col gap-3 font-barlow">
+                    <h1 className="font-quattrocento flex flex-col text-[40px] font-bold ">
+                      Özel <span>Lezzetus</span>
+                    </h1>
+                    <p>Position:Absolute Acı Burger</p>
+                    <button
+                      type="button"
+                      className=" bg-white w-[50%] p-2 text-[12px] rounded-full text-red-600"
+                    >
+                      {" "}
+                      SİPARİŞ VER
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="w-[48%]  flex flex-col justify-between">
                 <div className="w-[100%] ">
