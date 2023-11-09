@@ -74,9 +74,28 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className="w-[100%] bg-amber-100">
+          <div className="w-[65%] mx-auto mt-10 ">
+            <div className="w-[100%] bg-black h-[200px] flex justify-between">
+              <div className="w-[48%] h-[200px] bg-yellow-500"></div>
+              <div className="w-[48%] h-[200px] bg-blue-400">
+                <div className="w-[100%] h-[100px] bg-green-500"></div>
+                <div className="w-[100%] h-[100px] bg-green-950"></div>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center bg-yellow-200">
+              <p> en çok paketlenen menüler</p>
+              <h1>Acıktıran Kodlara Doyuran Lezzetler</h1>
+            </div>
+            <div>
+              <div>
+                <img src="" alt="" />
+                <h1></h1>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
       </div>
     </>
   );
