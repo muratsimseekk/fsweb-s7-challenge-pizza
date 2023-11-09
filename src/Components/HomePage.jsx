@@ -87,13 +87,45 @@ export default function HomePage() {
               <p> en çok paketlenen menüler</p>
               <h1>Acıktıran Kodlara Doyuran Lezzetler</h1>
             </div>
-            <div>
-              <div>
-                <img src="" alt="" />
-                <h1></h1>
+            <div className="flex justify-between  gap-5">
+              <div className="flex gap-3">
+                <img src="src/img/kore.svg" />
+                <h1 className="font-barlow flex items-center gap-1">
+                  YENİ! <span>Kore</span>{" "}
+                </h1>
+              </div>
+              <div className="flex gap-3">
+                <img src="src/img/pizza.svg" />
+                <h1 className="font-barlow flex items-center gap-1">Pizza</h1>
+              </div>
+              <div className="flex gap-3">
+                <img src="src/img/burger.svg" />
+                <h1 className="font-barlow flex items-center gap-1">Burger</h1>
+              </div>
+              <div className="flex gap-3">
+                <img src="src/img/kizartma.svg" />
+                <h1 className="font-barlow flex items-center gap-1">
+                  Kızartmalar
+                </h1>
+              </div>
+              <div className="flex gap-3">
+                <img src="src/img/fast-food.svg" />
+                <h1 className="font-barlow flex items-center gap-1">
+                  Fast food
+                </h1>{" "}
+              </div>
+              <div className="flex gap-3">
+                <img src="src/img/icecek.svg" />
+                <h1 className="font-barlow flex items-center gap-1">
+                  Gazlı İçecek
+                </h1>
               </div>
             </div>
-            <div></div>
+            <div className="flex justify-between">
+              <div className="h-[200px] w-[32%] bg-slate-700"></div>
+              <div className="h-[200px] w-[32%] bg-slate-700"></div>
+              <div className="h-[200px] w-[32%] bg-slate-700"></div>
+            </div>
           </div>
         </div>
       </div>
