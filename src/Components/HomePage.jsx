@@ -38,7 +38,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[10vh] bg-slate-700 flex  justify-center">
+        <div className="w-[100%] h-[10vh] bg-slate-700 flex  justify-center text-zinc-800 bg-white">
           <div className="flex justify-between w-[75%] gap-5">
             <div className="flex gap-3">
               <img src="src/img/kore.svg" />
@@ -47,33 +47,29 @@ export default function HomePage() {
               </h1>
             </div>
             <div className="flex gap-3">
-              <img src="src/img/kore.svg" />
+              <img src="src/img/pizza.svg" />
+              <h1 className="font-barlow flex items-center gap-1">Pizza</h1>
+            </div>
+            <div className="flex gap-3">
+              <img src="src/img/burger.svg" />
+              <h1 className="font-barlow flex items-center gap-1">Burger</h1>
+            </div>
+            <div className="flex gap-3">
+              <img src="src/img/kizartma.svg" />
               <h1 className="font-barlow flex items-center gap-1">
-                YENİ! <span>Kore</span>{" "}
+                Kızartmalar
               </h1>
             </div>
             <div className="flex gap-3">
-              <img src="src/img/kore.svg" />
+              <img src="src/img/fast-food.svg" />
               <h1 className="font-barlow flex items-center gap-1">
-                YENİ! <span>Kore</span>{" "}
-              </h1>
-            </div>
-            <div className="flex gap-3">
-              <img src="src/img/kore.svg" />
-              <h1 className="font-barlow flex items-center gap-1">
-                YENİ! <span>Kore</span>{" "}
-              </h1>
-            </div>
-            <div className="flex gap-3">
-              <img src="src/img/kore.svg" />
-              <h1 className="font-barlow flex items-center gap-1">
-                YENİ! <span>Kore</span>{" "}
+                Fast food
               </h1>{" "}
             </div>
             <div className="flex gap-3">
-              <img src="src/img/kore.svg" />
+              <img src="src/img/icecek.svg" />
               <h1 className="font-barlow flex items-center gap-1">
-                YENİ! <span>Kore</span>{" "}
+                Gazlı İçecek
               </h1>
             </div>
           </div>
