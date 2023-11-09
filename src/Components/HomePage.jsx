@@ -108,47 +108,45 @@ export default function HomePage() {
               </h1>
             </div>
             <div className="flex justify-between  gap-5">
-              <div className="flex gap-3">
+              <div className="flex  gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
                 <img src="src/img/kore.svg" />
-                <h1 className="font-barlow flex items-center gap-1">
-                  YENİ! <span>Kore</span>{" "}
-                </h1>
+                <h1 className="font-barlow flex items-center gap-1">Ramen</h1>
               </div>
-              <div className="flex gap-3">
+              <div className="flex  gap-3 justify-center text-[14px] text-white rounded-full bg-black px-7 py-2">
                 <img src="src/img/pizza.svg" />
                 <h1 className="font-barlow flex items-center gap-1">Pizza</h1>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
                 <img src="src/img/burger.svg" />
                 <h1 className="font-barlow flex items-center gap-1">Burger</h1>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
                 <img src="src/img/kizartma.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
                   Kızartmalar
                 </h1>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
                 <img src="src/img/fast-food.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
-                  Fast food
+                  Fast <span>food</span>
                 </h1>{" "}
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2 ">
                 <img src="src/img/icecek.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
-                  Gazlı İçecek
+                  Gazlı <span>İçecek</span>
                 </h1>
               </div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-20">
               <div className="h-[200px] w-[32%] bg-slate-700"></div>
               <div className="h-[200px] w-[32%] bg-slate-700"></div>
               <div className="h-[200px] w-[32%] bg-slate-700"></div>
             </div>
           </div>
         </div>
-        <footer className="h-[300px] w-[100%] bg-black"></footer>
+        <footer className="h-[300px] w-[100%] bg-black "></footer>
       </div>
     </>
   );
