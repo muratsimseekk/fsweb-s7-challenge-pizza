@@ -152,37 +152,37 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <footer className="h-[500px] w-[100%] bg-black flex justify-center">
-          <div className="w-[65%] h-[100%] bg-purple-300">
-            <div className="h-[80%]  flex justify-between">
-              <div className="bg-blue-300 w-[25%]">
+        <footer className="h-[430px] w-[100%] bg-black flex justify-center text-white">
+          <div className="w-[65%] h-[100%] flex flex-col justify-around">
+            <div className="h-[80%] flex justify-between items-center border-solid border-b-2 my-6 ">
+              <div className=" w-[30%] h-[300px] flex flex-col justify-between">
                 <div>
-                  <h1>
+                  <h1 className="font-londrina flex flex-col text-[32px] tracking-wider">
                     Teknolojik <span>Yemekler</span>
                   </h1>
                 </div>
-                <div>
-                  <div>
+                <div className="flex flex-col gap-4 font-barlow">
+                  <div className="flex gap-4">
                     <img src="src/adv-aseets/icons/icon-1.png" />
-                    <p>
+                    <p className="flex flex-col">
                       341 Londonderry Road, <span>Istanbul Türkiye</span>
                     </p>
                   </div>
-                  <div>
+                  <div className="flex gap-4">
                     <img src="src/adv-aseets/icons/icon-2.png" />
                     <p>aciktim@teknolojikyemekler.com</p>
                   </div>
-                  <div>
+                  <div className="flex gap-4">
                     <img src="src/adv-aseets/icons/icon-3.png" />
                     <p>+90 216 123 45 67</p>
                   </div>
                 </div>
               </div>
-              <div className="bg-green-300 w-[25%] flex flex-col justify-between">
+              <div className=" w-[25%] h-[250px] flex flex-col justify-around font-barlow">
                 <div>
-                  <h1>Sıccacık Menuler</h1>
+                  <h1 className="text-[25px]">Sıccacık Menuler</h1>
                 </div>
-                <div>
+                <div className="flex flex-col gap-2">
                   <p>Terminal Pizza</p>
                   <p>5 Kişilik Hackathlon Pizza</p>
                   <p>useEffect Tavuklu Pizza</p>
@@ -191,9 +191,9 @@ export default function HomePage() {
                   <p>Position Absolute Acı Burger</p>
                 </div>
               </div>
-              <div className="bg-rose-600 w-[35%] flex flex-col justify-between">
+              <div className=" w-[35%] h-[280px] flex flex-col justify-between">
                 <div>
-                  <h1>Instagram</h1>
+                  <h1 className="font-barlow text-[22px]">Instagram</h1>
                 </div>
                 <div>
                   <ul className="flex flex-wrap gap-2">
@@ -237,7 +237,10 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="h-[20%] bg-pink-200"></div>
+            <div className=" text-zinc-300 flex justify-between my-5">
+              <p className="font-barlow">© 2023 Teknolojik Yemekler.</p>
+              <img src="src/adv-aseets/icons/twitter.png" />
+            </div>
           </div>
         </footer>
       </div>
