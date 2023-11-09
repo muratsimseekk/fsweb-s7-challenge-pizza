@@ -42,7 +42,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="w-[100%] p-4  flex justify-center text-zinc-800 bg-white">
-          <div className="flex justify-between w-[75%] gap-5">
+          <div className="flex justify-between flex-wrap w-[75%] gap-5">
             <div className="flex gap-3">
               <img src="src/img/kore.svg" />
               <h1 className="font-barlow flex items-center gap-1">
@@ -79,7 +79,7 @@ export default function HomePage() {
         </div>
         <div className="w-[100%] bg-amber-50">
           <div className="w-[65%] mx-auto mt-10 flex flex-col gap-10">
-            <div className="w-[100%]   flex justify-between p-2">
+            <div className="w-[100%] flex flex-wrap justify-between p-2">
               <div className="w-[48%] rounded-md relative">
                 <img
                   src="src/adv-aseets/kart-1.png"
@@ -152,32 +152,32 @@ export default function HomePage() {
                 Acıktıran Kodlara Doyuran Lezzetler
               </h1>
             </div>
-            <div className="flex justify-between  gap-5">
-              <div className="flex  gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
+            <div className="flex justify-between flex-wrap gap-4">
+              <div className="flex  gap-1 justify-center text-[14px] rounded-full bg-white px-5 py-2">
                 <img src="src/img/kore.svg" />
                 <h1 className="font-barlow flex items-center gap-1">Ramen</h1>
               </div>
-              <div className="flex  gap-3 justify-center text-[14px] text-white rounded-full bg-black px-7 py-2">
+              <div className="flex  gap-1 justify-center text-[14px] text-white rounded-full bg-black px-5 py-2">
                 <img src="src/img/pizza.svg" />
                 <h1 className="font-barlow flex items-center gap-1">Pizza</h1>
               </div>
-              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
+              <div className="flex gap-1 justify-center text-[14px] rounded-full bg-white px-5 py-2">
                 <img src="src/img/burger.svg" />
                 <h1 className="font-barlow flex items-center gap-1">Burger</h1>
               </div>
-              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
+              <div className="flex gap-1 justify-center text-[14px] rounded-full bg-white px-5 py-2">
                 <img src="src/img/kizartma.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
                   Kızartmalar
                 </h1>
               </div>
-              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2">
+              <div className="flex gap-1 justify-center text-[14px] rounded-full bg-white px-5 py-2">
                 <img src="src/img/fast-food.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
                   Fast <span>food</span>
                 </h1>{" "}
               </div>
-              <div className="flex gap-3 justify-center text-[14px] rounded-full bg-white px-7 py-2 ">
+              <div className="flex gap-1 justify-center text-[14px] rounded-full bg-white px-5 py-2 ">
                 <img src="src/img/icecek.svg" />
                 <h1 className="font-barlow flex items-center gap-1">
                   Gazlı <span>İçecek</span>
