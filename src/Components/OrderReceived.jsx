@@ -31,7 +31,7 @@ const OrderReceived = () => {
             </h1>
           </div>
           <div className="w-[100%] flex justify-center font-barlow text-white">
-            <div className="w-[40%]">
+            <div className="w-[35%]">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-4 ">
                   <h1 className="text-zinc-300">
@@ -60,7 +60,7 @@ const OrderReceived = () => {
             </div>
           </div>
           <div className="flex justify-center pb-10 font-barlow text-white">
-            <div className="w-[40%] flex flex-col items-center border-solid border border-stone-100 rounded-md">
+            <div className="w-[35%] flex flex-col items-center border-solid border border-stone-100 rounded-md">
               <div className="w-[90%] flex flex-col  gap-3 p-6 ">
                 <h3 className="text-white font-semibold font-barlow ">
                   Sipariş Toplamı
